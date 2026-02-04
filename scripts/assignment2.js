@@ -21,4 +21,23 @@ function convertToFahrenheit() {
     // Display result with 2 decimal places
     document.getElementById("result").textContent = 
         `${celsius}°C = ${fahrenheit.toFixed(2)}°F`;
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedData = JSON.parse(localStorage.getItem("result")) || [];
+    savedData.forEach(row => addRowToTable(row.celsius));
+
+});
+function addDataToTable(celsius) {
+// Create a new row at the end of the table
+const newRow = tableBody.insertRow();
+
+// Create new cells for name and age
+const celsiusCell = newRow.insertCell(1);
+
+
+// Assign the values to the cells
+celsiusCell.textContent = result;
+
 }
